@@ -24,8 +24,26 @@ const swiperAbout = new Swiper(".about__slider", {
   },
 });
 
-document.querySelectorAll('.accordeon__triger').forEach((item) =>{
-  item.addEventListener('click', () => {
-    item.parentNode.classList.toggle('accordeon__item--active')
-  })
+const  swiper = new Swiper(".period__slider", {
+  direction: "vertical",
+  slidesPerView: 1,
+  spaceBetween: 30,
+  mousewheel: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 });
+
+// Добавим закрытие меню при повторном нажатии на кнопку
+document.getElementById('toggleNav').addEventListener('click', function(event) {
+    var mainNav = document.getElementById('mainNav');
+    if (mainNav.style.display === 'none') {
+      mainNav.style.display = 'flex';
+    } else {
+      mainNav.style.display = 'none';
+    }
+
+});
+
+
